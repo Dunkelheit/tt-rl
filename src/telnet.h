@@ -98,6 +98,7 @@
 #define     TELOPT_ZMP           93  /* Zenith Mud Protocol */
 #define     TELOPT_GMCP         201  /* Generic Mud Communication Protocol */
 #define     TELOPT_EXOPL        255
+#define     BR       10
 
 char *telcmds[] =
 {

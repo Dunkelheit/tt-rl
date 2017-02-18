@@ -1390,6 +1390,11 @@ int recv_sb_gmcp(struct session *ses, int cplen, unsigned char *src)
 		{
 			break;
 		}
+		if (src[i] == BR)
+		{
+			src[i] = ' ';
+			break;
+		}
 		*pto++ = src[i++];
 	}
 
@@ -1403,6 +1408,7 @@ int recv_sb_gmcp(struct session *ses, int cplen, unsigned char *src)
 	{
 		switch (src[i])
 		{
+			case BR:
 			case ' ':
 				i++;
 				break;
@@ -1539,6 +1545,7 @@ int recv_sb_gmcp(struct session *ses, int cplen, unsigned char *src)
 							type = 0;
 							break;
 
+						case BR:
 						case ' ':
 							i++;
 							break;
